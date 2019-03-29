@@ -41,15 +41,44 @@ export const getCourses = function(args) {
   }
 }
 
+export const updateCourseTopic = function({id, topic}) {
+  courses.map(course => {
+      if (course.id === id) {
+          course.topic = topic;
+          return course;
+      }
+  });
+  return courses.filter(course => course.id === id) [0];
+}
 
 /*
 
 Queries
 
+--------------  query  -------------- 
 {
   courses(topic:"JavaScript") {
     id
   }
 }
+
+{
+  course(id:1) {
+    id,
+    title,
+    description
+  }
+}
+ -------------- Mutation query  -------------- 
+mutation {
+  updateCourseTopic(
+    id: 3,
+    topic: "Node.js"
+  ) {
+    id,
+    author
+  }
+}
+
 
 */

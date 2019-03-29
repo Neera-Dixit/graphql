@@ -5,7 +5,7 @@
  import express from 'express';
 import expressGraphql from 'express-graphql';
 import { buildSchema } from 'graphql';
-import { getCourse, getCourses } from './courses';
+import { getCourse, getCourses, updateCourseTopic } from './courses';
 import { SERVERPORT } from './config';
 
 // GraphQL schema
@@ -13,6 +13,9 @@ var schema = buildSchema(`
     type Query {
       course(id: Int!): Course,
       courses(topic: String): [Course]
+    },
+    type Mutation {
+      updateCourseTopic(id: Int!, topic: String!): Course
     },
     type Course {
       id: Int
@@ -28,6 +31,7 @@ var schema = buildSchema(`
 var root = {
   course: getCourse,
   courses: getCourses,
+  updateCourseTopic: updateCourseTopic
 };
 
 const graphqlApp = express();
