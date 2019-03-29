@@ -1,7 +1,7 @@
 {
   "name": "graphql",
   "version": "1.0.0",
-  "description": "",
+  "description": "Graphql Helloworld",
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
