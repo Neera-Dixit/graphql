@@ -14,7 +14,6 @@ app.get('/', (request, response) => {
 
 app.use('/graphql', graphqlHTTP({
   schema: Schema,
-  // rootValue: root,
   graphiql: true,
 }));
 
