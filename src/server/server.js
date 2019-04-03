@@ -30,7 +30,20 @@ graphqlApp.listen(SERVERPORT,() => {
 Posts Query 
 
  {
-	posts(postID: 2) {
+	posts {
+	  id,
+    description,
+    author,
+    comments {
+      id,
+          description,
+    author,
+    }
+	} 
+}
+
+ {
+	post(postID: 2) {
 	  id,
     description,
     author,

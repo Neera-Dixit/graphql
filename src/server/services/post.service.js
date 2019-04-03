@@ -11,6 +11,10 @@ const posts = [{
 const postService = {
   getPostsByID: (postID) => {
     return posts.filter(post => post.id == postID);
+  },
+
+  getPosts: () => {
+    return posts;
   }
 };
 

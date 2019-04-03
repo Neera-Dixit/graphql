@@ -4,8 +4,9 @@ type Post {
   description: String!
   comments: [Comment!]!
 }
-
+ 
 type Query {
-  posts(postID: ID!): Post
+  posts: [Post]
+  post(postID: ID): Post
   comments(postID: ID!): [Comment]
 }

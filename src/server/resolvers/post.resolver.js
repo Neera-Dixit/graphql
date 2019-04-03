@@ -2,8 +2,11 @@ import { postService, commentService } from '../services';
 
 const postResolver = {
   Query: {
-    posts: (root, { postID }) => {
+    post: (root, { postID }) => {
       return postService.getPostsByID(parseInt(postID))[0];
+    },
+    posts: (root) => {
+      return postService.getPosts();
     },
   },
 
